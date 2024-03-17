@@ -19,7 +19,7 @@ const FormDropdown: React.FC<FormDropdownProps> = ({
       <Form.Label>{label}</Form.Label>
       <Form.Select
         defaultValue={defaultValue}
-        onChange={(formData) => onChange(formData.target.value as T)}
+        onChange={(formData) => onChange(formData.target.value)}
       >
         <option disabled>{defaultValue}</option>
         {children.map((children, index) => (
