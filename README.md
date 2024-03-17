@@ -1,4 +1,16 @@
-# React + TypeScript + Vite
+# React Store
+
+This project has been initialised using Vite and provides a basic setup for React and Typescript.
+
+## Getting started
+To install the application 
+
+``npm install``
+
+To run the application 
+
+``npm run dev``
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
