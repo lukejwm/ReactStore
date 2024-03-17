@@ -1,10 +1,10 @@
-import AddNewProductForm from "./components/feature/AddNewProductForm";
+import AddNewProductPage from "./components/page/AddNewProductPage";
 
 function App() {
   return (
     <>
       <h1>Welcome to My React Store</h1>
-      <AddNewProductForm />
+      <AddNewProductPage />
     </>
   );
 }
