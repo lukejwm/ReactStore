@@ -7,9 +7,12 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ children }: ProductCardProps) => {
+  const isOnSpecial = children.onSpecial;
+  const background = isOnSpecial ? "danger" : "light";
+
   return (
     <div className="col">
-      <Card className="shadow-sm">
+      <Card className="shadow-sm" bg={background}>
         <div className="bd-placeholder-img card-img-top">
           {/* TODO: get actual images to replace this! */}
           <img
@@ -19,7 +22,12 @@ const ProductCard = ({ children }: ProductCardProps) => {
           />
         </div>
         <Card.Body>
-          <Card.Title>{children.name}</Card.Title>
+          <Card.Title>
+            {children.name}
+            {isOnSpecial && (
+              <span className="special-indicator"> (ON SPECIAL)</span>
+            )}
+          </Card.Title>
           <Card.Text>{children.description}</Card.Text>
           <div className="d-flex justify-content-between align-items-center">
             <Button variant="outline-secondary" size="sm">
@@ -28,7 +36,11 @@ const ProductCard = ({ children }: ProductCardProps) => {
             <Button variant="outline-secondary" size="sm">
               Edit
             </Button>
-            <small className="text-muted">9 mins</small>
+            {children.isPerishable ? (
+              <small className="text-muted">
+                Expires: {children.expiryDate.toDateString()}
+              </small>
+            ) : null}
           </div>
         </Card.Body>
       </Card>
