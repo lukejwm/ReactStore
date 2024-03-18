@@ -1,6 +1,7 @@
 import Category from "./category";
 
 interface Product {
+  id: number;
   name: string;
   description: string;
   isPerishable: boolean;

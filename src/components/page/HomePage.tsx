@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap";
-import products from "../../domain/store-data";
 import ProductList from "../feature/ProductList";
 
 const HomePage = () => {
@@ -13,7 +12,7 @@ const HomePage = () => {
             </Col>
           </Row>
 
-          <ProductList children={products} />
+          <ProductList />
         </main>
       </Container>
     </>

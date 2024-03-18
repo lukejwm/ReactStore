@@ -4,6 +4,7 @@ import Category from "./category";
 // Initialize an array of products
 const products: Product[] = [
   {
+    id: 1,
     name: "Croissant",
     description: "Buttery flaky pastry",
     isPerishable: true,
@@ -13,6 +14,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 2,
     name: "Apple",
     description: "Sweet and juicy fruit",
     isPerishable: true,
@@ -22,6 +24,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 3,
     name: "Frozen Pizza",
     description: "Delicious ready-to-bake pizza",
     isPerishable: false,
@@ -31,6 +34,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 4,
     name: "Toilet Paper",
     description: "Soft and absorbent",
     isPerishable: false,
@@ -40,6 +44,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 5,
     name: "Chicken Breast",
     description: "Lean white meat",
     isPerishable: true,
@@ -49,6 +54,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 6,
     name: "Carrots",
     description: "Sweet and crunchy vegetables",
     isPerishable: true,
@@ -58,6 +64,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 7,
     name: "Baguette",
     description: "Long and crusty French bread",
     isPerishable: true,
@@ -67,6 +74,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 8,
     name: "Banana",
     description: "Yellow curved fruit",
     isPerishable: true,
@@ -76,6 +84,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 9,
     name: "Ice Cream",
     description: "Creamy frozen dessert",
     isPerishable: true,
@@ -85,6 +94,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 10,
     name: "Laundry Detergent",
     description: "Powerful cleaning agent for clothes",
     isPerishable: false,
@@ -94,6 +104,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 11,
     name: "Ground Beef",
     description: "Minced meat from beef",
     isPerishable: true,
@@ -103,6 +114,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 12,
     name: "Lettuce",
     description: "Crisp green leafy vegetable",
     isPerishable: true,
@@ -112,6 +124,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 13,
     name: "Bagel",
     description: "Ring-shaped bread roll",
     isPerishable: true,
@@ -121,6 +134,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 14,
     name: "Orange",
     description: "Round citrus fruit",
     isPerishable: true,
@@ -130,6 +144,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 15,
     name: "Frozen Vegetables Mix",
     description: "Assorted frozen vegetables",
     isPerishable: false,
@@ -139,6 +154,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 16,
     name: "Dish Soap",
     description: "Liquid soap for washing dishes",
     isPerishable: false,
@@ -148,6 +164,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 17,
     name: "Salmon Fillet",
     description: "Fillet of salmon fish",
     isPerishable: true,
@@ -157,6 +174,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 18,
     name: "Broccoli",
     description: "Nutritious green vegetable",
     isPerishable: true,
@@ -166,6 +184,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 19,
     name: "Chocolate Chip Cookies",
     description: "Homemade cookies with chocolate chips",
     isPerishable: true,
@@ -175,6 +194,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 20,
     name: "Grapes",
     description: "Small sweet berries",
     isPerishable: true,
@@ -184,6 +204,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 21,
     name: "Frozen French Fries",
     description: "Thin potato fries ready to cook",
     isPerishable: false,
@@ -193,6 +214,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 22,
     name: "Paper Towels",
     description: "Absorbent towels for cleaning",
     isPerishable: false,
@@ -202,6 +224,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 23,
     name: "Ground Turkey",
     description: "Minced meat from turkey",
     isPerishable: true,
@@ -211,6 +234,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 24,
     name: "Blueberry Muffin",
     description: "Moist muffin with blueberries",
     isPerishable: true,
@@ -220,6 +244,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 25,
     name: "Orange",
     description: "Citrus fruit with vitamin C",
     isPerishable: true,
@@ -229,6 +254,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 26,
     name: "Frozen Fish Fillets",
     description: "Fresh frozen fish fillets",
     isPerishable: true,
@@ -238,6 +264,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 27,
     name: "Laundry Detergent",
     description: "Powerful cleaning detergent",
     isPerishable: false,
@@ -247,6 +274,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 28,
     name: "Pork Chop",
     description: "Tender pork chop",
     isPerishable: true,
@@ -256,6 +284,7 @@ const products: Product[] = [
     onSpecial: false,
   },
   {
+    id: 29,
     name: "Broccoli",
     description: "Nutritious green vegetable",
     isPerishable: true,
@@ -265,6 +294,7 @@ const products: Product[] = [
     onSpecial: true,
   },
   {
+    id: 30,
     name: "Ice Cream",
     description: "Creamy frozen dessert",
     isPerishable: true,

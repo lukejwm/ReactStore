@@ -1,5 +1,6 @@
 import Product from "../../../domain/product";
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   children: Product;
@@ -22,7 +23,7 @@ const ProductCard = ({ children }: ProductCardProps) => {
           <Card.Text>{children.description}</Card.Text>
           <div className="d-flex justify-content-between align-items-center">
             <Button variant="outline-secondary" size="sm">
-              View
+              <Link to={`/products/${children.id}`}>View</Link>
             </Button>
             <Button variant="outline-secondary" size="sm">
               Edit

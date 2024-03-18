@@ -1,20 +1,22 @@
 import { useState } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { RootState } from "../../state/store";
+import { Container, Row, Button } from "react-bootstrap";
 import ProductCard from "../ui/productCard/ProductCard";
-import Product from "../../domain/product";
 
-interface ProductListProps {
-  children: Product[];
-}
+function ProductList() {
+  // Load the list of products from the state
+  const productList = useSelector(
+    (state: RootState) => state.product.productList
+  );
 
-function ProductList({ children }: ProductListProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
   // Calculate the index range for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentProducts = children.slice(indexOfFirstItem, indexOfLastItem);
+  const currentProducts = productList.slice(indexOfFirstItem, indexOfLastItem);
 
   // Function to handle pagination
   const handlePagination = (direction: string) => {
@@ -28,8 +30,8 @@ function ProductList({ children }: ProductListProps) {
       <div className="album py-5">
         <Container>
           <Row xs={1} sm={2} md={3} className="g-3">
-            {currentProducts.map((product, index) => (
-              <ProductCard key={index} children={product} />
+            {currentProducts.map((product) => (
+              <ProductCard key={product.id} children={product} />
             ))}
           </Row>
         </Container>
@@ -46,7 +48,7 @@ function ProductList({ children }: ProductListProps) {
         <Button
           variant="outline-secondary"
           onClick={() => handlePagination("next")}
-          disabled={indexOfLastItem >= children.length}
+          disabled={indexOfLastItem >= productList.length}
         >
           Next
         </Button>
