@@ -1,14 +1,14 @@
 import Category from "./category";
 
 interface Product {
-  id: number;
   name: string;
   description: string;
   isPerishable: boolean;
-  expiryDate: Date;
-  category: Category;
+  expiryDate?: string;
+  category: Category | undefined;
   price: number;
   onSpecial: boolean;
+  image: string;
 }
 
 export default Product;

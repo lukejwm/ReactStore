@@ -6,7 +6,7 @@ interface FormLabelProps {
   inputType: string;
   placeholder: string;
   value: string | number;
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const FormLabel: React.FC<FormLabelProps> = ({

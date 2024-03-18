@@ -15,11 +15,7 @@ const ProductCard = ({ children }: ProductCardProps) => {
       <Card className="shadow-sm" bg={background}>
         <div className="bd-placeholder-img card-img-top">
           {/* TODO: get actual images to replace this! */}
-          <img
-            src="/home/lukejwm/Coding/react-bootstrap-templates/react-vite-album-template/src/assets/react.svg"
-            height="225"
-            width="100%"
-          />
+          <img src={children.image} height="225" width="100%" />
         </div>
         <Card.Body>
           <Card.Title>
@@ -29,16 +25,16 @@ const ProductCard = ({ children }: ProductCardProps) => {
             )}
           </Card.Title>
           <Card.Text>{children.description}</Card.Text>
+          <Card.Text>
+            <strong>Price: £{children.price}</strong>
+          </Card.Text>
           <div className="d-flex justify-content-between align-items-center">
-            <Button variant="outline-secondary" size="sm">
-              <Link to={`/products/${children.id}`}>View</Link>
-            </Button>
             <Button variant="outline-secondary" size="sm">
               Edit
             </Button>
             {children.isPerishable ? (
               <small className="text-muted">
-                Expires: {children.expiryDate.toDateString()}
+                Expires: {children.expiryDate}
               </small>
             ) : null}
           </div>

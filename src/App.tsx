@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Layout from "./components/ui/layout/Layout";
 import HomePage from "./components/page/HomePage";
 import AddNewProductPage from "./components/page/AddNewProductPage";
-import ProductPage from "./components/page/ProductPage";
 import NoPage from "./components/page/NoPage";
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="add-new" element={<AddNewProductPage />} />
-            <Route path="products/:productId" />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

@@ -21,7 +21,10 @@ const productSlice = createSlice({
       state.selectedCategory = action.payload;
     },
     addNewProduct: (state, action: PayloadAction<Product>) => {
-      state.productList.concat(action.payload);
+      return {
+        ...state,
+        productList: [...state.productList, action.payload],
+      };
     },
   },
 });
