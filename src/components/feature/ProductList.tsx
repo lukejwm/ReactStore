@@ -10,13 +10,21 @@ function ProductList() {
     (state: RootState) => state.product.productList
   );
 
+  // get a selected from the state
+  const selectedCategory = useSelector(
+    (state: RootState) => state.product.selectedCategory
+  );
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
 
   // Calculate the index range for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentProducts = productList.slice(indexOfFirstItem, indexOfLastItem);
+
+  const currentProducts = selectedCategory
+    ? productList.filter((product) => product.category === selectedCategory)
+    : productList.slice(indexOfFirstItem, indexOfLastItem);
 
   // Function to handle pagination
   const handlePagination = (direction: string) => {

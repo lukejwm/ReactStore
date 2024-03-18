@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
 import ProductList from "../feature/ProductList";
+import CategorySelection from "../feature/CategorySelection";
 
 const HomePage = () => {
   return (
@@ -12,6 +13,10 @@ const HomePage = () => {
             </Col>
           </Row>
 
+          {/* Category selection dropdown */}
+          <CategorySelection />
+
+          {/* Product list */}
           <ProductList />
         </main>
       </Container>
