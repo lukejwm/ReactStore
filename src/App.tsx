@@ -1,15 +1,23 @@
-import Header from "./components/ui/header/Header";
-import Footer from "./components/ui/footer/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import Layout from "./components/ui/layout/Layout";
 import HomePage from "./components/page/HomePage";
 import AddNewProductPage from "./components/page/AddNewProductPage";
+import NoPage from "./components/page/NoPage";
 
 function App() {
   return (
-    <>
-      <Header />
-      <HomePage />
-      <Footer />
-    </>
+    <Router>
+      <div className="ReactStoreApp">
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="add-new" element={<AddNewProductPage />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
