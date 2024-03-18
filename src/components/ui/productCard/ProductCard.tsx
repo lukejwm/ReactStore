@@ -1,6 +1,7 @@
+import { useState } from "react";
 import Product from "../../../domain/product";
+import EditProductModal from "../../feature/EditProductModal";
 import { Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 interface ProductCardProps {
   children: Product;
@@ -9,6 +10,16 @@ interface ProductCardProps {
 const ProductCard = ({ children }: ProductCardProps) => {
   const isOnSpecial = children.onSpecial;
   const background = isOnSpecial ? "danger" : "light";
+
+  const [showEditModal, setShowEditModal] = useState(false);
+
+  const handleEditClick = () => {
+    setShowEditModal(true);
+  };
+
+  const handleCloseEditModal = () => {
+    setShowEditModal(false);
+  };
 
   return (
     <div className="col">
@@ -29,7 +40,11 @@ const ProductCard = ({ children }: ProductCardProps) => {
             <strong>Price: £{children.price}</strong>
           </Card.Text>
           <div className="d-flex justify-content-between align-items-center">
-            <Button variant="outline-secondary" size="sm">
+            <Button
+              variant="outline-secondary"
+              size="sm"
+              onClick={handleEditClick}
+            >
               Edit
             </Button>
             {children.isPerishable ? (
@@ -40,6 +55,12 @@ const ProductCard = ({ children }: ProductCardProps) => {
           </div>
         </Card.Body>
       </Card>
+
+      <EditProductModal
+        product={children}
+        show={showEditModal}
+        onHide={handleCloseEditModal}
+      />
     </div>
   );
 };

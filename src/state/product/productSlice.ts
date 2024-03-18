@@ -26,8 +26,19 @@ const productSlice = createSlice({
         productList: [...state.productList, action.payload],
       };
     },
+    updateProduct: (state, action: PayloadAction<Product>) => {
+      const { name, ...updatedProduct } = action.payload;
+      const index = state.productList.findIndex((p) => p.name === name);
+      if (index !== -1) {
+        state.productList[index] = {
+          ...state.productList[index],
+          ...updatedProduct,
+        };
+      }
+    },
   },
 });
 
-export const { setCategory, addNewProduct } = productSlice.actions;
+export const { setCategory, addNewProduct, updateProduct } =
+  productSlice.actions;
 export default productSlice.reducer;
