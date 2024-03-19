@@ -39,7 +39,7 @@ function ProductList() {
         <Container>
           <Row xs={1} sm={2} md={3} className="g-3">
             {currentProducts.map((product) => (
-              <ProductCard key={product.id} children={product} />
+              <ProductCard key={product.name} children={product} />
             ))}
           </Row>
         </Container>
